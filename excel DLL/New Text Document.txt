@@ -1,0 +1,156 @@
+ public PaymentReturnProperty UploadFundTransfer(HttpPostedFileBase strm, int companycode, int type, int userid, int custno, string CompanyAccountNo, string TranCode)
+        {
+            var returnProp = new PaymentReturnProperty();
+            if (strm != null)
+            {
+
+
+                DataTable dt = null;
+                IExcelDataReader excelReader = null;
+                DataSet result = null;
+                DataRow[] listdr;
+                //FileStream stream = File.Open((filePath, FileMode.Open, FileAccess.Read);
+                if (type == 0)
+                {
+                    excelReader = ExcelReaderFactory.CreateBinaryReader(strm.InputStream);
+                    //result = excelReader.AsDataSet();
+                }
+                else
+                {
+                    excelReader = ExcelReaderFactory.CreateOpenXmlReader(strm.InputStream);
+
+                }
+                if (excelReader != null)
+                {
+                    result = excelReader.AsDataSet();
+                    excelReader.IsFirstRowAsColumnNames = true;
+                    dt = result.Tables[0];
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow row = dt.Rows[0];
+                        dt.Rows.Remove(row);
+
+                        if (dt.Rows.Count > 0)
+                        {
+                            if (dt.Rows.Count == 1)
+                            {
+                                returnProp.oErrorDisplay = new ErrorDisplay()
+                                {
+                                    ErrorCode = 0,
+                                    FriendlyErrorMessage = "Please use the single payment screen to perform such activiti"
+                                };
+                                return returnProp;
+                            }
+
+                            //if (dt.Rows.Count > 1)
+                            //{
+                            //    DataRow row1 = dt.Rows[dt.Rows.Count - 1];
+                            //    dt.Rows.Remove(row1);
+                            //}
+
+                            // var BatchId = repoBatchgen.Get(null);
+                            string batch = "Y";
+
+
+
+                            // BatchId.BatchNo = Convert.ToDecimal(batch) + 1;
+                            //repoBatchgen.Update(BatchId);
+
+                           // unitOfWork.Commit(userid, CompanyAccountNo);
+
+                            dt.Columns.Add("Column11", typeof(int), custno.ToString());
+                            dt.Columns.Add("Column12", typeof(int), userid.ToString());
+
+                            dt.Columns.Add("Column13", typeof(int), companycode.ToString());
+
+                            //dt.Columns.Add("Column9", typeof(System.String));
+                            // dt.Columns["Column9"].DefaultValue = "Y";
+                            dt.Columns.Add("Column14", typeof(int), TranCode);
+
+                            DataView view = new DataView(dt);
+                            DataTable det = view.ToTable(true, "Column1", "Column2", "Column3", "Column4", "Column5", "Column6",
+                                "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14");
+
+
+                            listdr = det.Select("Column1 is not null");
+                            //listdr = dt.Select("column1 is not null");
+                            string consString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+                            using (SqlConnection con = new SqlConnection(consString))
+                            {
+                                using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
+                                {
+                                    sqlBulkCopy.SqlRowsCopied += new SqlRowsCopiedEventHandler(sqlBulk_SqlRowsCopied);
+
+                                    sqlBulkCopy.DestinationTableName = "dbo.itb_FundTransfer_upload";
+
+
+                                    sqlBulkCopy.ColumnMappings.Add("Column1", "from_acct_no");
+                                    sqlBulkCopy.ColumnMappings.Add("Column2", "from_acct_branch_code");
+                                    sqlBulkCopy.ColumnMappings.Add("Column3", "transactionref");
+                                    sqlBulkCopy.ColumnMappings.Add("Column4", "to_acct_no");
+                                    sqlBulkCopy.ColumnMappings.Add("Column5", "ToAcctName");
+                                    sqlBulkCopy.ColumnMappings.Add("Column6", "to_acct_bank_code");
+                                    sqlBulkCopy.ColumnMappings.Add("Column7", "to_acct_branch_code");
+                                    sqlBulkCopy.ColumnMappings.Add("Column8", "amt");
+                                    //sqlBulkCopy.ColumnMappings.Add("Column9", "NewBatchFlag");
+                                    sqlBulkCopy.ColumnMappings.Add("Column9", "to_acct_naration");
+                                    sqlBulkCopy.ColumnMappings.Add("Column10", "currency");
+                                    sqlBulkCopy.ColumnMappings.Add("Column11", "RegisteredRimNo");
+                                    sqlBulkCopy.ColumnMappings.Add("Column12", "userid");
+                                    sqlBulkCopy.ColumnMappings.Add("Column13", "companyid");
+                                    sqlBulkCopy.ColumnMappings.Add("Column14", "Trancode");
+
+                                    //if (dt.Rows.Count > 1)
+                                    //{
+                                    //    sqlBulkCopy.ColumnMappings.Add("Column9", "Batchid");
+                                    //}
+
+                                    con.Open();
+                                    sqlBulkCopy.WriteToServer(listdr);
+
+                                    con.Close();
+
+
+
+
+                                }
+                            }
+                            excelReader.Close();
+                            returnProp.oErrorDisplay = new ErrorDisplay()
+                            {
+                                ErrorCode = 0,
+                                FriendlyErrorMessage = "File Uploaded sucessfully"
+                            };
+                            return returnProp;
+                        }
+                        else
+                        {
+                            excelReader.Close();
+                            returnProp.oErrorDisplay = new ErrorDisplay()
+                            {
+                                ErrorCode = -1,
+                                FriendlyErrorMessage = "No rows in Excel"
+                            };
+                            return returnProp;
+                            //excelReader.Close();
+                        }
+
+                    }
+                    else
+                    {
+                        returnProp.oErrorDisplay = new ErrorDisplay()
+                        {
+                            ErrorCode = -1,
+                            FriendlyErrorMessage = "No rows in Excel"
+                        };
+                        return returnProp;
+                    }
+                }
+            }
+            returnProp.oErrorDisplay = new ErrorDisplay()
+            {
+                ErrorCode = -201,
+                FriendlyErrorMessage = "An error occured while loading this file!"
+            };
+            return returnProp;
+        }

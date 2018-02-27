@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A7982B3-FDE6-4471-99D4-D55F9641A14E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TechReconWindowService.DAL</RootNamespace>
+    <AssemblyName>TechReconWindowService.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechReconWindowService.BAL">
+      <HintPath>..\TechReconWindowService.BAL\bin\Debug\TechReconWindowService.BAL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addCashCount.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admAccountType.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admAgency.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admATMType.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admBank.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admBankBranch.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admBankMenuControl.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admBankRoleAssign.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admChannel.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admClientProfile.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admCountry.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admCurrency.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admCurrencyList.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admDatabaseType.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admDataPullingControl.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admDataSource.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admDBAudit.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admIsLocked.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admLocation.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admMatchingCriteria.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admMatchingTable.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admMatchingType.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admMenuAssignment.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admMerchant.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admObjectType.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admPOS.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admReconAtm.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admReconConfig.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admReconDataSource.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admReconSource.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admReconType.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admSourceAccount.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admStatusItem.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admTerminal.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admUserProfile.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AfricaWorldTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AfricaWorldTransDismissed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AfricaWorldTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AfricaWorldTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AirtelTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AirtelTransDismissed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AirtelTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AirtelTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Application.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATMJournal.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="atm_host.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankroleMenu_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BatchCounter.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="card_acceptor.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CB.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSAfricaWorldTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSAfricaWorldTransDismissed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSAfricaWorldTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSAfricaWorldTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSAirtelTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSAirtelTransDismissed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSAirtelTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSAirtelTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CbsAtmTransaction.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSConsortiumTransaction.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSConsortiumTransactionDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSConsortiumTransactionError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSConsortiumTransactionHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSMGTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSMGTransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSMGTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSMGTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSMTNTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSMTNTransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSMTNTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSMTNTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSNostroTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSNostroTransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSNostroTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSNostroTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSRiaTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSRiaTransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSRiaTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSRiaTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSUnityLinkTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSUnityLinkTransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSUnityLinkTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSUnityLinkTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSWUMTTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSWUMTTransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSWUMTTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSWUMTTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSXpressMoneyTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSXpressMoneyTransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSXpressMoneyTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBSXpressMoneyTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChargeExemption.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyProfile.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsortiumTransaction.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsortiumTransactionDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsortiumTransactionError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsortiumTransactionHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="core_banking.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencyCode.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="exception.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="failed_import.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FailledFile.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="field_mapping.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FileProcessControl.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="finacle_card_acceptor.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="generated_dates.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="glBalance.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="glbal_failed_import.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Implementation\DbFactory.cs" />
+    <Compile Include="Implementation\Disposable.cs" />
+    <Compile Include="Implementation\Repository.cs" />
+    <Compile Include="Implementation\UnitOfWork.cs" />
+    <Compile Include="Interfaces\IDbFactory.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="isp_AirtelTransHistList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isp_AWAException_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_ConsortiumDismissedList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_ConsortiumErrorView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isp_ConsortiumException_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isp_ConsortiumTransactionReport_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_ConsortiumTransErrorList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_ConsortiumTransHistList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_consortiumTransHist_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_ConsortiumTransView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_MGErrorView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isp_MGException_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_MGTransErrorList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_MoneyGramErrorList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_MoneyGramHistList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_MoneyGramTransView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_MTNErrorView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isp_MTNException_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_MtnTransErrorList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_MTNTransHistList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_MTNTransView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_NostroTransHistList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isp_NostroVostroException_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_ReconSummary_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isp_RiaException_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_RiaHistList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_RialErrorView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_RiaTransErrorList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_RiaTransHist_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_RiaTransView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isp_ULException_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_UnityLinkErrorView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_UnityLinkTransErrorList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_UnityLinkTransHistList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_UnityLinkTransView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isp_UpdateAuditReport_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_UserRole_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_WesternUnionErrorList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_WesternUnionHistList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_WUMTErrorView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isp_WUMTException_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_WUMTTransErrorList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_WUMTTransView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_XMErrorView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isp_XMException_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_XMTransErrorList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_XpressMoneyTransHistList_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_XpressMoneyTransHist_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="isp_XpresssMTransView_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JournalATM.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Journallog.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JournalTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JournalTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JournalTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="loaded_dates.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Membership.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MGTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MGTransDismissed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MGTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MGTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MTNTRan.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MTNTransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MTNTRansError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MTNTRansHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostilionTransaction.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Postillion.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proATMTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proCoreBankingTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proExceptionItem.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proGLBalance.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResetUserPwd_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResponseMessage.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RiaTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RiaTransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RiaTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RiaTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleTable.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rptDBAuditTrail.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rptReconSummary.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SettementReport.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spMatchingTable_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_CurrencyDefined_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_dataSourceConDetails_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetBankProfile_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sp_Read_BankProfile_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sp_Read_Currency_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sp_UserProfileByUserId_Result.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TechReconContext.cs" />
+    <Compile Include="TechReconWindowService.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechReconWindowService.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TechReconWindowService.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TechReconWindowService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechReconWindowService.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="tmpImportWUMT.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmpVoyager.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnityLinkTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnityLinkTransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnityLinkTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnityLinkTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VostroMT940950Trans.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VostroMT940950TransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VostroMT940950TransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VostroMT940950TransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="voyager.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WUMTAgentSettlement.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WUMTTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WUMTTransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WUMTTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WUMTTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XpressMoneyTran.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XpressMoneyTransDismisssed.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XpressMoneyTransError.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XpressMoneyTransHistory.cs">
+      <DependentUpon>TechReconWindowService.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="TechReconWindowService.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TechReconWindowService.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="TechReconWindowService.edmx.diagram">
+      <DependentUpon>TechReconWindowService.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TechReconWindowService.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TechReconWindowService.edmx</DependentUpon>
+      <LastGenOutput>TechReconWindowService.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TechReconWindowService.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TechReconWindowService.edmx</DependentUpon>
+      <LastGenOutput>TechReconWindowService.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
